@@ -1,29 +1,37 @@
 #include "MainWindow.h"
 #include <wx/wx.h>
 #include <wx/splitter.h>
+#include "Version.h"
 
 
 
-/// <summary>
-/// Creates the send button on the message type panel
-/// </summary>
-/// <param name="msgTypePanel">Message Type Panel</param>
-/// <returns></returns>
-wxButton* CreateSendButton(wxPanel* msgTypePanel) {
+wxButton* MainWindow::CreateSendButton(wxPanel* msgTypePanel) {
 	// Send Button
-	wxButton* sendMsgButton = new wxButton(msgTypePanel, -1, wxT("Send"), wxDefaultPosition, wxDefaultSize, wxBORDER_NONE);
-	sendMsgButton->SetBackgroundColour(wxColor(50, 50, 50));
+	wxButton* sendMsgButton = new wxButton(msgTypePanel, wxID_ANY, wxT("Send"), wxDefaultPosition, wxDefaultSize, wxBORDER_NONE);
+	sendMsgButton->SetBackgroundColour(wxColor(111, 56, 255));
 	sendMsgButton->SetForegroundColour(wxColor(200, 200, 200));
-	
+
+	// send button handlers
+	sendMsgButton->Bind(wxEVT_ENTER_WINDOW, &MainWindow::ButtonHover, this);
+	sendMsgButton->Bind(wxEVT_LEAVE_WINDOW, &MainWindow::ButtonLeave, this);
+	sendMsgButton->Bind(wxEVT_BUTTON, &MainWindow::SendButtonClick, this);
 	return sendMsgButton;
 }
 
-/// <summary>
-/// Creates the Chat Panel
-/// </summary>
-/// <param name="currentFrame">Current wxFrame</param>
-/// <returns></returns>
-wxPanel* CreateChatPanel(wxFrame *currentFrame) {
+wxButton* MainWindow::CreateAddChatButton(wxPanel* chatPanel) {
+	// add chat button
+	wxButton* addChatButton = new wxButton(chatPanel, wxID_ANY, wxT("New Chat"), wxDefaultPosition, wxDefaultSize, wxBORDER_NONE);
+	addChatButton->SetBackgroundColour(wxColor(111, 56, 255));
+	addChatButton->SetForegroundColour(wxColor(200, 200, 200));
+
+	// send button handlers
+	addChatButton->Bind(wxEVT_ENTER_WINDOW, &MainWindow::ButtonHover, this);
+	addChatButton->Bind(wxEVT_LEAVE_WINDOW, &MainWindow::ButtonLeave, this);
+	addChatButton->Bind(wxEVT_BUTTON, &MainWindow::AddChatButtonClick, this);
+	return addChatButton;
+}
+
+wxPanel* MainWindow::CreateChatPanel(wxFrame *currentFrame) {
 	// panel that contains chats created
 	wxPanel* chatPanel = new wxPanel(currentFrame, wxID_ANY, wxDefaultPosition, wxSize(100, 100));
 	chatPanel->SetBackgroundColour(wxColor(30, 30, 30));
@@ -31,70 +39,86 @@ wxPanel* CreateChatPanel(wxFrame *currentFrame) {
 	return chatPanel;
 }
 
-/// <summary>
-/// Creates the Message Panel
-/// </summary>
-/// <param name="currentFrame">Current wxFrame</param>
-/// <returns></returns>
-wxPanel* CreateMessagePanel(wxFrame* currentFrame) {
+wxPanel* MainWindow::CreateMessagePanel(wxFrame* currentFrame) {
 	// panel that contains messages for current chat
 	wxPanel* msgPanel = new wxPanel(currentFrame, wxID_ANY, wxDefaultPosition, wxSize(500, 600));
 	msgPanel->SetBackgroundColour(wxColor(40, 40, 40));
 	return msgPanel;
 }
 
-/// <summary>
-/// Creates the message type panel
-/// </summary>
-/// <param name="currentFrame">Current wxFrame</param>
-/// <returns></returns>
-wxPanel* CreateMessageTypePanel(wxFrame* currentFrame) {
+wxPanel* MainWindow::CreateMessageTypePanel(wxFrame* currentFrame) {
 	// panel that allows the typing of a message
 	wxPanel* msgTypePanel = new wxPanel(currentFrame, wxID_ANY, wxDefaultPosition, wxSize(500, 50));
 	msgTypePanel->SetBackgroundColour(wxColor(33, 33, 33));
 	return msgTypePanel;
 }
 
+wxTextCtrl* MainWindow::CreateMessageTypeBox(wxPanel* msgTypePanel) {
+	wxTextCtrl* msgTypeBox = new wxTextCtrl(msgTypePanel, wxID_ANY, "Message...", wxDefaultPosition, wxDefaultSize, wxBORDER_NONE, wxDefaultValidator, wxTextCtrlNameStr);
+	msgTypeBox->SetBackgroundColour(wxColour(50, 50, 50));
+	msgTypeBox->SetForegroundColour(wxColor(200, 200, 200));
+	//msgTypeBox->Bind(wxEVT_LEFT_DOWN, &MainWindow::InitialClearMessageTypeBox, this);
+	return msgTypeBox;
+}
+
 // main window GUI logic
 MainWindow::MainWindow(const wxString& title, const wxPoint& pos, const wxSize& size) : wxFrame(nullptr, wxID_ANY, title, pos, size) {
 
-	// panel that contains chats
-	wxPanel* chatPanel = CreateChatPanel(this);
+	/*
+	* MAIN ELEMENTS
+	*/
 
-	// panel that contains messages
-	wxPanel* msgPanel = CreateMessagePanel(this);
+	// Chat Panel Controls
+	wxPanel* chatPanel = CreateChatPanel(this); // panel that contains chats
+	wxButton* addChatButton = CreateAddChatButton(chatPanel); // add chat button
 
-	// panel that allows the typing of a message
-	wxPanel* msgTypePanel = CreateMessageTypePanel(this);
+	// Message Panel Controls
+	wxPanel* msgPanel = CreateMessagePanel(this); // panel that contains messages
+	wxStaticText* versionText = CreateVersionText(msgPanel);
 
-	// send button
-	wxButton* sendMsgButton = CreateSendButton(msgTypePanel);
-	// send button handlers
-	sendMsgButton->Bind(wxEVT_ENTER_WINDOW, &MainWindow::SendButtonHover, this);
-	sendMsgButton->Bind(wxEVT_LEAVE_WINDOW, &MainWindow::SendButtonLeave, this);
-	sendMsgButton->Bind(wxEVT_BUTTON, &MainWindow::SendButtonClick, this);
+	// Message Type Panel Controls
+	wxPanel* msgTypePanel = CreateMessageTypePanel(this); // panel that allows the typing of a message
+	wxButton* sendMsgButton = CreateSendButton(msgTypePanel); // send button
+	wxTextCtrl* msgTypeBox = CreateMessageTypeBox(msgTypePanel); // message type box
 
-	// chat side sizer
+	/*
+	* SIZERS
+	*/
+
+	// chat side panel sizer
 	wxBoxSizer* leftSizer = new wxBoxSizer(wxHORIZONTAL);
 	leftSizer->Add(chatPanel, 1, wxEXPAND | wxLEFT);
+
+	// chat side information sizer
+	wxBoxSizer* addChatSizer = new wxBoxSizer(wxVERTICAL);
+	chatPanel->SetSizer(addChatSizer);
+	addChatSizer->Add(addChatButton, 0, wxALL | wxALIGN_TOP | wxEXPAND);
 
 	// msg side sizers
 	wxBoxSizer* rightSizer = new wxBoxSizer(wxVERTICAL);
 	rightSizer->Add(msgPanel, 1, wxEXPAND | wxALL);
 	rightSizer->Add(msgTypePanel, 0, wxEXPAND | wxALL);
-
-	leftSizer->Add(rightSizer, 1, wxEXPAND | wxALL);
-
-	// send button sizer
-	wxBoxSizer* sendSizer = new wxBoxSizer(wxVERTICAL);
-	msgTypePanel->SetSizer(sendSizer);
-	sendSizer->Add(sendMsgButton, 0, wxALL | wxALIGN_RIGHT);
-
+	leftSizer->Add(rightSizer, 1, wxEXPAND | wxALL); // splits the left chat panel and message panels
 	this->SetSizerAndFit(leftSizer);
+
+	// message panel sizer
+	wxBoxSizer* msgPanelSizer = new wxBoxSizer(wxVERTICAL);
+	msgPanel->SetSizer(msgPanelSizer);
+	msgPanelSizer->Add(versionText, 0, wxALL | wxALIGN_RIGHT, 2);
+
+	// message type box sizer
+	wxBoxSizer* messageTypeSizerLeft = new wxBoxSizer(wxHORIZONTAL);
+	msgTypePanel->SetSizer(messageTypeSizerLeft);
+	messageTypeSizerLeft->Add(msgTypeBox, 1, wxALL | wxEXPAND, 5);
+	messageTypeSizerLeft->Add(sendMsgButton, 0, wxALL | wxEXPAND);
+
+	//CreateStatusBar(2);
+	
 }
 
 // destructor
 MainWindow::~MainWindow() {
 
 }
+
 

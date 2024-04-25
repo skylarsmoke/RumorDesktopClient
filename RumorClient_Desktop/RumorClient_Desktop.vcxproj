@@ -138,11 +138,15 @@
     <ClCompile Include="App.cpp" />
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="MainWindow.cpp" />
+    <ClCompile Include="Messages.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="App.h" />
     <ClInclude Include="Login.h" />
     <ClInclude Include="MainWindow.h" />
+    <ClInclude Include="Messages.h" />
+    <ClInclude Include="UniversalEventHandlers.h" />
+    <ClInclude Include="Version.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
