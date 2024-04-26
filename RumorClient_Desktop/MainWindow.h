@@ -1,6 +1,8 @@
 #pragma once
 
 #include <wx/wx.h>
+#include "Chat.h"
+#include <vector>
 
 using namespace std;
 
@@ -10,6 +12,8 @@ public:
 	MainWindow(const wxString& title,
 			   const wxPoint& pos,
 			   const wxSize& size);
+
+	vector<wxPanel*> chats;
 
 	/// <summary>
 	/// changes the buttons color when hovering
@@ -39,6 +43,16 @@ public:
 		wxButton* currentButton = wxDynamicCast(event.GetEventObject(), wxButton);
 		currentButton->SetBackgroundColour(wxColor(155, 142, 255));
 		currentButton->Refresh();
+
+		wxPanel* subChatPanel = wxDynamicCast(currentButton->FindWindowByName(wxString("ChatSubPanel")), wxPanel);
+		Chat* chat = new Chat(subChatPanel);
+
+		// add chat to chat list
+		chats.push_back(chat);
+
+		wxBoxSizer* sizer = wxDynamicCast(subChatPanel->GetSizer(), wxBoxSizer);
+		sizer->Add(chat, 1, wxEXPAND);
+		subChatPanel->Layout();
 	}
 
 	/// <summary>
@@ -111,6 +125,13 @@ private:
 	/// <param name="msgTypePanel">Message Type Panel</param>
 	/// <returns></returns>
 	wxTextCtrl* CreateMessageTypeBox(wxPanel* msgTypePanel);
+
+	/// <summary>
+	/// Builds the panel where chats are listed
+	/// </summary>
+	/// <param name="chatPanel"></param>
+	/// <returns></returns>
+	wxPanel* CreateSubChatPanel(wxPanel* chatPanel);
 
 };
 

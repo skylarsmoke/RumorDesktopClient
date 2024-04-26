@@ -2,6 +2,8 @@
 #include <wx/wx.h>
 #include <wx/splitter.h>
 #include "Version.h"
+#include "Message.h"
+#include "Chat.h"
 
 
 
@@ -61,6 +63,12 @@ wxTextCtrl* MainWindow::CreateMessageTypeBox(wxPanel* msgTypePanel) {
 	return msgTypeBox;
 }
 
+wxPanel* MainWindow::CreateSubChatPanel(wxPanel* chatPanel) {
+	wxPanel* subChatPanel = new wxPanel(chatPanel, wxID_ANY, wxDefaultPosition, wxDefaultSize, 2621440L, wxString("ChatSubPanel"));
+	subChatPanel->SetBackgroundColour(wxColor(30, 30, 30));
+	return subChatPanel;
+}
+
 // main window GUI logic
 MainWindow::MainWindow(const wxString& title, const wxPoint& pos, const wxSize& size) : wxFrame(nullptr, wxID_ANY, title, pos, size) {
 
@@ -101,10 +109,11 @@ MainWindow::MainWindow(const wxString& title, const wxPoint& pos, const wxSize& 
 	leftSizer->Add(rightSizer, 1, wxEXPAND | wxALL); // splits the left chat panel and message panels
 	this->SetSizerAndFit(leftSizer);
 
-	// message panel sizer
-	wxBoxSizer* msgPanelSizer = new wxBoxSizer(wxVERTICAL);
-	msgPanel->SetSizer(msgPanelSizer);
-	msgPanelSizer->Add(versionText, 0, wxALL | wxALIGN_RIGHT, 2);
+	if (!isProduction) {
+		wxBoxSizer* versionSizer = new wxBoxSizer(wxVERTICAL);
+		msgPanel->SetSizer(versionSizer);
+		versionSizer->Add(versionText, 0, wxALL | wxALIGN_RIGHT, 2);
+	}
 
 	// message type box sizer
 	wxBoxSizer* messageTypeSizerLeft = new wxBoxSizer(wxHORIZONTAL);
@@ -113,7 +122,27 @@ MainWindow::MainWindow(const wxString& title, const wxPoint& pos, const wxSize& 
 	messageTypeSizerLeft->Add(sendMsgButton, 0, wxALL | wxEXPAND);
 
 	//CreateStatusBar(2);
+
+	/*
+	* Message Logic
+	*/
+	Message* msg = new Message(msgPanel);
+	wxBoxSizer* msgSubSizer = new wxBoxSizer(wxVERTICAL);
+	msgPanel->SetSizer(msgSubSizer);
+	msgSubSizer->Add(msg, 1, wxALL | wxEXPAND, 50);
+		
+	/*
+	* Chat Logic
+	*/
+	wxPanel* subChatPanel = CreateSubChatPanel(chatPanel);
+	wxBoxSizer* chatPanelSubSizer = new wxBoxSizer(wxVERTICAL);
+	chatPanel->SetSizer(chatPanelSubSizer);
+	chatPanelSubSizer->Add(addChatButton, 0, wxALL | wxEXPAND | wxALIGN_TOP);
+	chatPanelSubSizer->Add(subChatPanel, 1, wxALL | wxEXPAND);
 	
+	// sub chat panel sizer
+	wxBoxSizer* subChatPanelSizer = new wxBoxSizer(wxVERTICAL);
+	subChatPanel->SetSizer(subChatPanelSizer);
 }
 
 // destructor
