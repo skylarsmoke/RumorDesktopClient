@@ -1,7 +1,6 @@
 #include "MainWindow.h"
 #include <wx/wx.h>
 #include <wx/splitter.h>
-#include "Version.h"
 #include "Message.h"
 #include "Chat.h"
 
@@ -82,7 +81,6 @@ MainWindow::MainWindow(const wxString& title, const wxPoint& pos, const wxSize& 
 
 	// Message Panel Controls
 	wxPanel* msgPanel = CreateMessagePanel(this); // panel that contains messages
-	wxStaticText* versionText = CreateVersionText(msgPanel);
 
 	// Message Type Panel Controls
 	wxPanel* msgTypePanel = CreateMessageTypePanel(this); // panel that allows the typing of a message
@@ -108,12 +106,6 @@ MainWindow::MainWindow(const wxString& title, const wxPoint& pos, const wxSize& 
 	rightSizer->Add(msgTypePanel, 0, wxEXPAND | wxALL);
 	leftSizer->Add(rightSizer, 1, wxEXPAND | wxALL); // splits the left chat panel and message panels
 	this->SetSizerAndFit(leftSizer);
-
-	if (!isProduction) {
-		wxBoxSizer* versionSizer = new wxBoxSizer(wxVERTICAL);
-		msgPanel->SetSizer(versionSizer);
-		versionSizer->Add(versionText, 0, wxALL | wxALIGN_RIGHT, 2);
-	}
 
 	// message type box sizer
 	wxBoxSizer* messageTypeSizerLeft = new wxBoxSizer(wxHORIZONTAL);

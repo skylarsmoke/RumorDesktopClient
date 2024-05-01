@@ -12,6 +12,9 @@ public:
 	App();
 	bool OnInit();
 
+	// variables
+	bool loggedIn;
+
 	// destructor
 	~App();
 

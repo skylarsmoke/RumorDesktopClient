@@ -16,9 +16,20 @@ App::App()
 bool App::OnInit() {
 	if (!wxApp::OnInit()) return false;
 
+	// login window
+	Login* login = new Login("Rumor", wxDefaultPosition, wxSize(500, 400));
+	login->Center();
+	login->Show(true);
 
-	MainWindow *mainWindow = new MainWindow("Rumor", wxDefaultPosition, wxSize(1200, 700));
-	mainWindow->Show(true);
+	loggedIn = false;
+	
+	// main window
+	if (loggedIn) {
+		MainWindow* mainWindow = new MainWindow("Rumor", wxDefaultPosition, wxSize(1200, 700));
+		mainWindow->Center();
+		mainWindow->Show(true);
+	}
+	
 
 
 	return true;

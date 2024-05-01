@@ -7,10 +7,15 @@ using namespace std;
 /// <summary>
 /// Chat class that creates chat objects displaying chat info
 /// </summary>
-class Chat : public wxPanel
+class Chat
 {
 public:
 	Chat(wxPanel* chatPanel);
+
+	/// <summary>
+	/// Retrieves the chat box panel associated with the chat
+	/// </summary>
+	wxPanel* GetChatBoxPanel();
 
 	// event handlers
 	
@@ -30,7 +35,7 @@ public:
 	/// <param name="event"></param>
 	void MouseLeftChat(wxMouseEvent& event) {
 		wxPanel* currentChatPanel = wxDynamicCast(event.GetEventObject(), wxPanel);
-		if (!isActive) {
+		if (!this->isActive) {
 			currentChatPanel->SetBackgroundColour(wxColor(30, 30, 30));
 			currentChatPanel->Refresh();
 		}
@@ -42,13 +47,13 @@ public:
 	/// </summary>
 	/// <param name="event"></param>
 	void ChatClicked(wxMouseEvent& event) {
-		if (!isActive) {
+		if (!this->isActive) {
 			wxPanel* currentChatPanel = wxDynamicCast(event.GetEventObject(), wxPanel);
 			currentChatPanel->SetBackgroundColour(wxColor(40, 40, 40));
 			currentChatPanel->Refresh();
 		}
 		
-		isActive = true; // set this chat as the active chat
+		this->isActive = true; // set this chat as the active chat
 	}
 
 	// variables
@@ -56,6 +61,7 @@ public:
 	int chatID;
 	string username;
 	string lastMessage;
+	wxPanel* chatBoxPanel;
 
 };
 

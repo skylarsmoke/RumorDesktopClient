@@ -13,7 +13,7 @@ public:
 			   const wxPoint& pos,
 			   const wxSize& size);
 
-	vector<wxPanel*> chats;
+	vector<Chat*> chats;
 
 	/// <summary>
 	/// changes the buttons color when hovering
@@ -46,12 +46,16 @@ public:
 
 		wxPanel* subChatPanel = wxDynamicCast(currentButton->FindWindowByName(wxString("ChatSubPanel")), wxPanel);
 		Chat* chat = new Chat(subChatPanel);
+		wxPanel* chatBoxPanel = chat->GetChatBoxPanel();
+		clearActiveChat();
 
 		// add chat to chat list
 		chats.push_back(chat);
+		chat->isActive = true;
+		chatBoxPanel->SetBackgroundColour(wxColor(40, 40, 40));
 
 		wxBoxSizer* sizer = wxDynamicCast(subChatPanel->GetSizer(), wxBoxSizer);
-		sizer->Add(chat, 1, wxEXPAND);
+		sizer->Add(chatBoxPanel, 1, wxEXPAND);
 		subChatPanel->Layout();
 	}
 
@@ -69,21 +73,38 @@ public:
 	///// Clears the message type box text when initially clicked
 	///// </summary>
 	///// <param name="event"></param>
-	//void InitialClearMessageTypeBox(wxMouseEvent& event) {
-	//	wxTextCtrl* currentTextBox = wxDynamicCast(event.GetEventObject(), wxTextCtrl);
-	//	string initialMessage = "Messages...";
-	//	string tet = currentTextBox->GetValue().ToStdString();
+	void InitialClearMessageTypeBox(wxMouseEvent& event) {
+		wxTextCtrl* currentTextBox = wxDynamicCast(event.GetEventObject(), wxTextCtrl);
+		string initialMessage = "Messages...";
+		string text = currentTextBox->GetValue().ToStdString();
 
-	//	if (tet.compare(initialMessage)) {
-	//		currentTextBox->Clear();
-	//		currentTextBox->Refresh();
-	//	}
+		if (text.compare(initialMessage)) {
+			currentTextBox->Clear();
+			currentTextBox->Refresh();
+		}
 
-	//}
+	}
+
+	/// <summary>
+	/// When a chat is switched to active this function unactives all the chats first
+	/// </summary>
+	void clearActiveChat() {
+		for (int i = 0; i < chats.size(); i++) {
+			if (chats[i]->isActive) {
+				chats[i]->isActive = false;
+				wxPanel* chatBoxPanel = chats[i]->GetChatBoxPanel();
+				chatBoxPanel->SetBackgroundColour(wxColor(30, 30, 30));
+				chatBoxPanel->Refresh();
+
+				break;
+			}
+		}
+	}
 
 	~MainWindow();
 
 private:
+
 	/// <summary>
 	/// Creates the send button on the message type panel
 	/// </summary>
