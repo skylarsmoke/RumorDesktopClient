@@ -144,6 +144,10 @@ Login::Login(const wxString& title, const wxPoint& pos, const wxSize& size) : wx
 
 }
 
+bool Login::AuthenticateLogin(wxString username, wxString password) {
+	return true;
+}
+
 // Login Destructor
 Login::~Login() {
 

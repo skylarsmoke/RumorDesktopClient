@@ -3,32 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\skyla\\OneDrive\\Desktop\\Development\\Rumor\\RumorClient\\RumorDesktopClient\\RumorClient_Desktop\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{38E25FCD-1191-4D91-A937-E248CB0A1777}|RumorClient_Desktop.vcxproj|C:\\Users\\skyla\\OneDrive\\Desktop\\Development\\Rumor\\RumorClient\\RumorDesktopClient\\RumorClient_Desktop\\App.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{38E25FCD-1191-4D91-A937-E248CB0A1777}|RumorClient_Desktop.vcxproj|solutionrelative:App.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{38E25FCD-1191-4D91-A937-E248CB0A1777}|RumorClient_Desktop.vcxproj|C:\\Users\\skyla\\OneDrive\\Desktop\\Development\\Rumor\\RumorClient\\RumorDesktopClient\\RumorClient_Desktop\\Login.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{38E25FCD-1191-4D91-A937-E248CB0A1777}|RumorClient_Desktop.vcxproj|solutionrelative:Login.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{38E25FCD-1191-4D91-A937-E248CB0A1777}|RumorClient_Desktop.vcxproj|C:\\Users\\skyla\\OneDrive\\Desktop\\Development\\Rumor\\RumorClient\\RumorDesktopClient\\RumorClient_Desktop\\MainWindow.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{38E25FCD-1191-4D91-A937-E248CB0A1777}|RumorClient_Desktop.vcxproj|solutionrelative:MainWindow.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{38E25FCD-1191-4D91-A937-E248CB0A1777}|RumorClient_Desktop.vcxproj|C:\\Users\\skyla\\OneDrive\\Desktop\\Development\\Rumor\\RumorClient\\RumorDesktopClient\\RumorClient_Desktop\\Login.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{38E25FCD-1191-4D91-A937-E248CB0A1777}|RumorClient_Desktop.vcxproj|solutionrelative:Login.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{38E25FCD-1191-4D91-A937-E248CB0A1777}|RumorClient_Desktop.vcxproj|C:\\Users\\skyla\\OneDrive\\Desktop\\Development\\Rumor\\RumorClient\\RumorDesktopClient\\RumorClient_Desktop\\MainWindow.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{38E25FCD-1191-4D91-A937-E248CB0A1777}|RumorClient_Desktop.vcxproj|solutionrelative:MainWindow.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{38E25FCD-1191-4D91-A937-E248CB0A1777}|RumorClient_Desktop.vcxproj|C:\\Users\\skyla\\OneDrive\\Desktop\\Development\\Rumor\\RumorClient\\RumorDesktopClient\\RumorClient_Desktop\\Login.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{38E25FCD-1191-4D91-A937-E248CB0A1777}|RumorClient_Desktop.vcxproj|solutionrelative:Login.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{38E25FCD-1191-4D91-A937-E248CB0A1777}|RumorClient_Desktop.vcxproj|C:\\Users\\skyla\\OneDrive\\Desktop\\Development\\Rumor\\RumorClient\\RumorDesktopClient\\RumorClient_Desktop\\Login.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{38E25FCD-1191-4D91-A937-E248CB0A1777}|RumorClient_Desktop.vcxproj|solutionrelative:Login.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{38E25FCD-1191-4D91-A937-E248CB0A1777}|RumorClient_Desktop.vcxproj|C:\\Users\\skyla\\OneDrive\\Desktop\\Development\\Rumor\\RumorClient\\RumorDesktopClient\\RumorClient_Desktop\\Chat.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{38E25FCD-1191-4D91-A937-E248CB0A1777}|RumorClient_Desktop.vcxproj|solutionrelative:Chat.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{38E25FCD-1191-4D91-A937-E248CB0A1777}|RumorClient_Desktop.vcxproj|C:\\Users\\skyla\\OneDrive\\Desktop\\Development\\Rumor\\RumorClient\\RumorDesktopClient\\RumorClient_Desktop\\App.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{38E25FCD-1191-4D91-A937-E248CB0A1777}|RumorClient_Desktop.vcxproj|solutionrelative:App.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{38E25FCD-1191-4D91-A937-E248CB0A1777}|RumorClient_Desktop.vcxproj|C:\\Users\\skyla\\OneDrive\\Desktop\\Development\\Rumor\\RumorClient\\RumorDesktopClient\\RumorClient_Desktop\\App.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{38E25FCD-1191-4D91-A937-E248CB0A1777}|RumorClient_Desktop.vcxproj|solutionrelative:App.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38E25FCD-1191-4D91-A937-E248CB0A1777}|RumorClient_Desktop.vcxproj|C:\\Users\\skyla\\OneDrive\\Desktop\\Development\\Rumor\\RumorClient\\RumorDesktopClient\\RumorClient_Desktop\\MainWindow.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{38E25FCD-1191-4D91-A937-E248CB0A1777}|RumorClient_Desktop.vcxproj|solutionrelative:MainWindow.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38E25FCD-1191-4D91-A937-E248CB0A1777}|RumorClient_Desktop.vcxproj|C:\\Users\\skyla\\OneDrive\\Desktop\\Development\\Rumor\\RumorClient\\RumorDesktopClient\\RumorClient_Desktop\\Chat.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{38E25FCD-1191-4D91-A937-E248CB0A1777}|RumorClient_Desktop.vcxproj|solutionrelative:Chat.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{38E25FCD-1191-4D91-A937-E248CB0A1777}|RumorClient_Desktop.vcxproj|C:\\Users\\skyla\\OneDrive\\Desktop\\Development\\Rumor\\RumorClient\\RumorDesktopClient\\RumorClient_Desktop\\Message.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -54,11 +54,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "App.h",
               "DocumentMoniker": "C:\\Users\\skyla\\OneDrive\\Desktop\\Development\\Rumor\\RumorClient\\RumorDesktopClient\\RumorClient_Desktop\\App.h",
               "RelativeDocumentMoniker": "App.h",
@@ -79,12 +79,11 @@
               "RelativeToolTip": "Chat.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAABEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-04-26T04:04:18.013Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-26T04:04:18.013Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Chat.h",
               "DocumentMoniker": "C:\\Users\\skyla\\OneDrive\\Desktop\\Development\\Rumor\\RumorClient\\RumorDesktopClient\\RumorClient_Desktop\\Chat.h",
               "RelativeDocumentMoniker": "Chat.h",
@@ -92,8 +91,7 @@
               "RelativeToolTip": "Chat.h",
               "ViewState": "AQIAAB4AAAAAAAAAAAAAAAIAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-04-26T03:54:47.013Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-26T03:54:47.013Z"
             },
             {
               "$type": "Document",
@@ -105,8 +103,7 @@
               "RelativeToolTip": "Message.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAA8AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-04-26T02:40:15.923Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-26T02:40:15.923Z"
             },
             {
               "$type": "Document",
@@ -130,12 +127,11 @@
               "RelativeToolTip": "Version.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-04-25T06:40:39.814Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-25T06:40:39.814Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "MainWindow.cpp",
               "DocumentMoniker": "C:\\Users\\skyla\\OneDrive\\Desktop\\Development\\Rumor\\RumorClient\\RumorDesktopClient\\RumorClient_Desktop\\MainWindow.cpp",
               "RelativeDocumentMoniker": "MainWindow.cpp",
@@ -143,57 +139,56 @@
               "RelativeToolTip": "MainWindow.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAABKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-04-22T01:15:28.134Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-22T01:15:28.134Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "MainWindow.h",
               "DocumentMoniker": "C:\\Users\\skyla\\OneDrive\\Desktop\\Development\\Rumor\\RumorClient\\RumorDesktopClient\\RumorClient_Desktop\\MainWindow.h",
               "RelativeDocumentMoniker": "MainWindow.h",
               "ToolTip": "C:\\Users\\skyla\\OneDrive\\Desktop\\Development\\Rumor\\RumorClient\\RumorDesktopClient\\RumorClient_Desktop\\MainWindow.h",
               "RelativeToolTip": "MainWindow.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADYAAAA5AAAA",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAADYAAAA5AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-04-22T01:12:47.996Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Login.h",
               "DocumentMoniker": "C:\\Users\\skyla\\OneDrive\\Desktop\\Development\\Rumor\\RumorClient\\RumorDesktopClient\\RumorClient_Desktop\\Login.h",
               "RelativeDocumentMoniker": "Login.h",
               "ToolTip": "C:\\Users\\skyla\\OneDrive\\Desktop\\Development\\Rumor\\RumorClient\\RumorDesktopClient\\RumorClient_Desktop\\Login.h",
               "RelativeToolTip": "Login.h",
-              "ViewState": "AQIAADkAAAAAAAAAAAAAAEUAAAAAAAAA",
+              "ViewState": "AQIAADwAAAAAAAAAAAAiwEMAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-04-21T23:57:12.589Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "Login.cpp",
               "DocumentMoniker": "C:\\Users\\skyla\\OneDrive\\Desktop\\Development\\Rumor\\RumorClient\\RumorDesktopClient\\RumorClient_Desktop\\Login.cpp",
               "RelativeDocumentMoniker": "Login.cpp",
               "ToolTip": "C:\\Users\\skyla\\OneDrive\\Desktop\\Development\\Rumor\\RumorClient\\RumorDesktopClient\\RumorClient_Desktop\\Login.cpp",
               "RelativeToolTip": "Login.cpp",
-              "ViewState": "AQIAABsAAAAAAAAAAAAAAHgAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAJMAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-04-22T00:09:08.911Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "App.cpp",
               "DocumentMoniker": "C:\\Users\\skyla\\OneDrive\\Desktop\\Development\\Rumor\\RumorClient\\RumorDesktopClient\\RumorClient_Desktop\\App.cpp",
               "RelativeDocumentMoniker": "App.cpp",
               "ToolTip": "C:\\Users\\skyla\\OneDrive\\Desktop\\Development\\Rumor\\RumorClient\\RumorDesktopClient\\RumorClient_Desktop\\App.cpp",
               "RelativeToolTip": "App.cpp",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-04-21T19:38:26.501Z",
               "EditorCaption": ""

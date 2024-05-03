@@ -1,5 +1,6 @@
 #pragma once
 #include <wx/wx.h>
+#include "MainWindow.h"
 
 class Login : public wxFrame
 {
@@ -37,6 +38,18 @@ public:
 		wxButton* currentButton = wxDynamicCast(event.GetEventObject(), wxButton);
 		currentButton->SetBackgroundColour(wxColor(155, 142, 255));
 		currentButton->Refresh();
+
+		// main window
+		if (AuthenticateLogin(wxT("username"), wxT("password"))) {
+			MainWindow* mainWindow = new MainWindow("Rumor", wxDefaultPosition, wxSize(1200, 700));
+			mainWindow->Center();
+			mainWindow->Show(true);
+			this->Destroy();
+		}
+		else {
+			// login authentication failed
+		}
+		
 	}
 
 	/// <summary>
@@ -50,6 +63,14 @@ public:
 	}
 
 private:
+
+	/// <summary>
+	/// Authenticates the login information
+	/// </summary>
+	/// <param name="username">username</param>
+	/// <param name="password">password</param>
+	/// <returns></returns>
+	bool AuthenticateLogin(wxString username, wxString password);
 
 	/// <summary>
 	/// Creates the username field
